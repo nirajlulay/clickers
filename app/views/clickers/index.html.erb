@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Clicker</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+</div>
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+<h1>Welcome to clickers</h1>
+
+
+
+<div style="float:right">
+<%= link_to 'Creat a new Clicker', new_clicker_path %> / <a href="calculate">View statistics</a>
+</div>	
+           <h4>Questions:</h4>
+    
+           </br>
+ 
+   </tr>
+
+
+   <% @clickers.each do |clicker| %>
+  
+   
+       <%= clicker.question_text %> (<%= link_to 'Show', clicker %>, <%= link_to 'Edit', edit_clicker_path(clicker) %>, <%= link_to 'View', clicker %>, <%= link_to 'Destroy', clicker, :confirm => 'Are you sure?', :method => :delete %>)
+</br>
+ 
+   <ol>  
+       <li><%= clicker.option1 %></br>
+</li>   
+       <li><%= clicker.option2 %></br>
+</li>   
+       <li><%= clicker.option3 %></br>
+ </li>  
+       <li><%= clicker.option4 %></br></li>
+  
+   </ol>  
+   
+<% end %>
+
+
+<br />
+
+
+
+</div>
+		</div>
+		
+	</div>
+</div>
+<!-- end page -->
+</body>
+</html>

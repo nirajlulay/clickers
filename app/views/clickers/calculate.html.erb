@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Clicker</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+</div>
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+		<div class="post">
+<h1>Statistics!</h1>
+<h4>Here is the result of the clickers. Below each question there is a chart showing number of selected answers</h4>
+
+<div style="float:right"><h3><a href="clickers">Go to main page!</a></h3></div>
+     <% for i in 0..@no %>
+     <h4><%= @array[i][4] %></h4>
+     <table>
+          <tr>
+	   <td Style="width: 70px">option1</td>
+                 <td>
+                 <table>
+                         <tr>
+		  <% if @array[i][5] == 1 %>
+                               <td bgcolor="green" width="<%= @array[i][0] %>"></td>
+                               <% else %>
+                               <td bgcolor="#FF6666" width="<%= @array[i][0] %>"></td>
+                               <% end %>
+		  <td><%= @array[i][0] %>%-<% @array[i][6] %>answers</td>
+                         </tr>  
+                  </table></td>   
+          </tr>
+           <tr>
+                 <td Style="width: 10%">option2</td>
+                 <td>
+                 <table>
+                         <tr>
+		  <% if @array[i][5]==2 %>
+                               <td bgcolor="green" width="<%= @array[i][1] %>"></td>
+		  <% else %>
+		  <td bgcolor="#FF6666" width="<%= @array[i][1] %>"></td>
+		  <% end %>
+                               <td><%= @array[i][1] %>%-<% @array[i][7] %>answers</td>
+                         </tr>  
+                  </table></td>   
+          </tr>
+          <tr>
+                 <td Style="width: 10%">option3</td>
+                 <td>
+                         <table>
+                         <tr>
+		  <% if @array[i][5]==3 %>
+                               <td bgcolor="green" width="<%= @array[i][2] %>"></td>
+		  <% else %>
+		  <td bgcolor="#FF6666" width="<%= @array[i][2] %>"></td>
+		  <% end %>
+                               <td><%= @array[i][2] %>%-<%= @array[i][8] %>answers</td>
+                         </tr>  
+                         </table>
+                 </td>
+          </tr>
+          <tr>
+                 <td Style="width: 10%">option4</td>
+                 <td>
+                         <table>
+                         <tr>
+		  <% if @array[i][5]==4 %>
+                               <td bgcolor="green" width="<%= @array[i][3] %>%"></td>
+		  <% else %>
+		  <td bgcolor="#FF6666" width="<%= @array[i][3] %>%"></td>
+                               <% end %>
+                               <td><%= @array[i][3] %>%-<%= @array[i][9] %>answers</td>
+                         </tr>  
+                          </table>
+                 </td>
+          </tr>
+     </table>     
+<%  end %>  
+</body>
+</html>

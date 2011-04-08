@@ -1,0 +1,37 @@
+<%= form_for(@clicker) do |f| %>
+  <% if @clicker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clicker.errors.count, "error") %> prohibited this clicker from being saved:</h2>
+
+      <ul>
+      <% @clicker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question_text %><br />
+    <%= f.text_field :question_text %>
+  </div>
+  <div class="field">
+    <%= f.label :option1 %><br />
+    <%= f.text_field :option1 %>
+  </div>
+  <div class="field">
+    <%= f.label :option2 %><br />
+    <%= f.text_field :option2 %>
+  </div>
+  <div class="field">
+    <%= f.label :option3 %><br />
+    <%= f.text_field :option3 %>
+  </div>
+  <div class="field">
+    <%= f.label :option4 %><br />
+    <%= f.text_field :option4 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

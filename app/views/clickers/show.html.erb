@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question text:</b>
+  <%= @clicker.question_text %>
+</p>
+
+<p>
+  <b>Option1:</b>
+  <%= @clicker.option1 %>
+</p>
+
+<p>
+  <b>Option2:</b>
+  <%= @clicker.option2 %>
+</p>
+
+<p>
+  <b>Option3:</b>
+  <%= @clicker.option3 %>
+</p>
+
+<p>
+  <b>Option4:</b>
+  <%= @clicker.option4 %>
+</p>
+
+
+<%= link_to 'Edit', edit_clicker_path(@clicker) %> |
+<%= link_to 'Back', clickers_path %>
